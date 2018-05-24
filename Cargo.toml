@@ -5,3 +5,4 @@ authors = ["Gustavo Aguiar <gugahoa@gmail.com>"]
 
 [dependencies]
 thunder = "0.3.1"
+clap = "2.31.2"

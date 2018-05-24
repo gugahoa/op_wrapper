@@ -44,6 +44,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "password_store"
 version = "0.1.0"
 dependencies = [
+ "clap 2.31.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "thunder 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
