@@ -1,0 +1,7 @@
+[package]
+name = "password_store"
+version = "0.1.0"
+authors = ["Gustavo Aguiar <gugahoa@gmail.com>"]
+
+[dependencies]
+thunder = "0.3.1"
