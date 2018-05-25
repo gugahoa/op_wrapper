@@ -25,17 +25,19 @@ impl PassApp {
         let output = mut_command.output().expect("Failed to execute 'op'");
         let item: op::Item = serde_json::from_str(&String::from_utf8_lossy(&output.stdout)).expect("Failed to deserialize item");
 
-        if let None = designation {
-            item.details.fields
-                .iter()
-                .for_each(|f| println!("{}: {}", f.designation, f.value));
-            return
-        }
+        let designation = match designation {
+            None => {
+                item.details.fields
+                    .iter()
+                    .for_each(|f| println!("{}: {}", f.designation, f.value));
+                return
+            },
+            Some(d) => d
+        };
 
-        let designation = designation.unwrap();
         let result = item.details.fields
             .iter()
-            .find(|f| f.designation == designation.to_string());
+            .find(|f| f.designation == designation);
 
         if let Some(field) = result {
             println!("{}", field.value);
