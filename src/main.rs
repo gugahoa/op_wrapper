@@ -17,12 +17,12 @@ impl PassApp {
     }
     fn get(item: &str, designation: Option<&str>) {
         let mut command = Command::new("op");
-        let mut_command = command
+        let ref_command= command
             .arg("get")
             .arg("item")
             .arg(item);
 
-        let output = mut_command.output().expect("Failed to execute 'op'");
+        let output = ref_command.output().expect("Failed to execute 'op'");
         let item: op::Item = serde_json::from_str(&String::from_utf8_lossy(&output.stdout)).expect("Failed to deserialize item");
 
         let designation = match designation {
