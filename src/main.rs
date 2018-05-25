@@ -3,10 +3,13 @@ extern crate clap;
 extern crate thunder;
 extern crate op;
 extern crate serde_json;
+extern crate spinner;
+extern crate isatty;
 
+use spinner::SpinnerBuilder;
 use thunder::thunderclap;
-
 use std::process::Command;
+use isatty::stdout_isatty;
 
 struct PassApp;
 
@@ -22,7 +25,16 @@ impl PassApp {
             .arg("item")
             .arg(item);
 
+        let sp = if stdout_isatty() {
+            Some(SpinnerBuilder::new("Waiting on op-cli...".into()).start())
+        } else { None };
+
         let output = ref_command.output().expect("Failed to execute 'op'");
+        if let Some(s) = sp {
+            s.done("Done!\n".into());
+            s.close();
+        }
+
         let item: op::Item = serde_json::from_str(&String::from_utf8_lossy(&output.stdout)).expect("Failed to deserialize item");
 
         let designation = match designation {

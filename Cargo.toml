@@ -1,6 +1,6 @@
 [package]
 name = "op_wrapper"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Gustavo Aguiar <gugahoa@gmail.com>"]
 
 [lib]
@@ -13,3 +13,5 @@ clap = "2.31.2"
 serde_json = "1.0"
 serde = "1.0"
 serde_derive = "1.0"
+spinner = { git = "https://github.com/gugahoa/spinner", rev = "152510b" }
+isatty = "0.1.8"
