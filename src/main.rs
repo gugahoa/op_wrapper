@@ -19,17 +19,17 @@ impl PassApp {
         println!("Hello, {}!", name);
     }
     fn get(item: &str, designation: Option<&str>) {
-        let mut command = Command::new("op");
-        let ref_command= command
-            .arg("get")
-            .arg("item")
-            .arg(item);
-
         let sp = if stdout_isatty() {
             Some(SpinnerBuilder::new("Waiting on op-cli...".into()).start())
         } else { None };
 
-        let output = ref_command.output().expect("Failed to execute 'op'");
+        let output = Command::new("op")
+            .arg("get")
+            .arg("item")
+            .arg(item)
+            .output()
+            .expect("Failed to execute 'op'");
+
         if let Some(s) = sp {
             s.done("Done!\n".into());
             s.close();
