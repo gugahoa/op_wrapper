@@ -62,12 +62,17 @@ impl PassApp {
             Some(SpinnerBuilder::new("Waiting on op-cli...".into()).start())
         } else { None };
 
-        let output = Command::new("op")
+        let mut command = Command::new("op");
+        let command_builder = command
             .arg("get")
             .arg("item")
-            .arg(item)
-            .output()
-            .expect("Failed to execute 'op'");
+            .arg(item);
+
+        if let Some(vault) = Self::vault() {
+            command_builder.arg(format!("--vault={}", vault));
+        }
+
+        let output = command_builder.output().expect("Failed to execute 'op'");
 
         if let Some(s) = sp {
             s.done("Done!\n".into());
