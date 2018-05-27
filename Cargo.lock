@@ -84,7 +84,7 @@ dependencies = [
  "serde_derive 1.0.59 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.17 (registry+https://github.com/rust-lang/crates.io-index)",
  "spinner 0.5.0 (git+https://github.com/gugahoa/spinner?rev=152510b)",
- "thunder 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "thunder 0.3.1 (git+https://github.com/spacekookie/thunder?rev=1ab1a39)",
 ]
 
 [[package]]
@@ -221,7 +221,7 @@ dependencies = [
 [[package]]
 name = "thunder"
 version = "0.3.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "git+https://github.com/spacekookie/thunder?rev=1ab1a39#1ab1a397c4e8008a4c5d4010a26040a2edaa7cfb"
 dependencies = [
  "clap 2.31.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "quote 0.4.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -299,7 +299,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum term 0.2.14 (registry+https://github.com/rust-lang/crates.io-index)" = "f2077e54d38055cf1ca0fd7933a2e00cd3ec8f6fed352b2a377f06dcdaaf3281"
 "checksum termion 1.5.1 (registry+https://github.com/rust-lang/crates.io-index)" = "689a3bdfaab439fd92bc87df5c4c78417d3cbe537487274e9b0b2dce76e92096"
 "checksum textwrap 0.9.0 (registry+https://github.com/rust-lang/crates.io-index)" = "c0b59b6b4b44d867f1370ef1bd91bfb262bf07bf0ae65c202ea2fbc16153b693"
-"checksum thunder 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "277ac671b7961cbcce92928a869ba2d12292017eaf3f16284aa7282d68bc43a2"
+"checksum thunder 0.3.1 (git+https://github.com/spacekookie/thunder?rev=1ab1a39)" = "<none>"
 "checksum unicode-width 0.1.5 (registry+https://github.com/rust-lang/crates.io-index)" = "882386231c45df4700b275c7ff55b6f3698780a650026380e72dabe76fa46526"
 "checksum unicode-xid 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)" = "fc72304796d0818e357ead4e000d19c9c174ab23dc11093ac919054d20a6a7fc"
 "checksum vec_map 0.8.1 (registry+https://github.com/rust-lang/crates.io-index)" = "05c78687fb1a80548ae3250346c3db86a80a7cdd77bda190189f2d0a0987c81a"
