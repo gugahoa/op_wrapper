@@ -74,6 +74,11 @@ impl PassApp {
             s.close();
         }
 
+        if !output.status.success() {
+            eprintln!("{}", String::from_utf8_lossy(&output.stderr));
+            return;
+        }
+
         let item: op::Item = serde_json::from_str(&String::from_utf8_lossy(&output.stdout)).expect("Failed to deserialize item");
 
         let designation = match designation {
